@@ -3,9 +3,11 @@ import os
 from discord.ext import commands
 from dotenv import load_dotenv
 
+#load token from .env
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
+# set up intents
 intents = discord.Intents.default()
 intents.message_content = True  
 
@@ -18,6 +20,6 @@ async def on_ready():
 
 @bot.command()
 async def test(ctx):
-    await ctx.send(f'Pong! {round(bot.latency * 1000)}ms')
+    await ctx.send(f'Fuck you! {round(bot.latency * 1000)}ms')
 
 bot.run(TOKEN)
